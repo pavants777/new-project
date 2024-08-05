@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="card">
+        <div id="card-content">
+            <div id="card-title">
+                <h2>Sign Up</h2>
+                <div class="underline-title"></div>
+            </div>
+            <form id="signupForm" method="post" class="form">
+                <label for="user-email" style="padding-top: 13px;">&nbsp;Enter Email</label>
+                <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+                <div class="form-border"></div>
+
+                <label for="username" style="padding-top: 22px;">&nbsp;Name</label>
+                <input id="user-username" class="form-content" type="text" name="username" autocomplete="on" required />
+                <div class="form-border"></div>
+
+                <label for="user-password" style="padding-top: 22px;">&nbsp;Password</label>
+                <input id="user-password" class="form-content" type="password" name="password" required />
+                <div class="form-border"></div>
+
+                <label for="user-password2" style="padding-top: 22px;">&nbsp;Confirm Password</label>
+                <input id="user-password2" class="form-content" type="password" name="password2" required />
+                <div class="form-border"></div>
+
+                <input id="submit-btn" type="submit" name="submit" value="Submit" />
+
+                <a href="login.html" id="Signup" style="padding-top: 15px">Already Have an Account?</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

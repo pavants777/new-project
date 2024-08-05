@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourly - Travel agancy</title>
+      
+        <!-- 
+          - favicon
+        -->
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+      
+        <!-- 
+          - custom css link
+        -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+      
+        <!-- 
+          - google font link
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"><link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body >
+        <header>
+        <div class="header-bottom" style="padding-top: 1rem;">
+            <div class="container">
+
+              <nav class="navbar" data-navbar>
+      
+                <div class="navbar-top">
+      
+                  <a href="#" class="logo">
+                    <img src="./assets/images/logo-blue.svg" alt="Tourly logo" style="color: black;">
+                  </a>
+      
+                  <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                    <ion-icon name="close-outline"></ion-icon>
+                  </button>
+      
+                </div>
+      
+                <ul class="navbar-list">
+      
+                  <li>
+                    <a href="index.html" class="navbar-link" data-nav-link style="color: black;">home</a>
+                  </li>
+      
+                  <!-- <li>
+                    <a href="#" class="navbar-link" data-nav-link style="color: black;">about us</a>
+                  </li> -->
+      
+                  <li>
+                    <a href="destination.html" class="navbar-link" data-nav-link style="color: black;">destination</a>
+                  </li>
+      
+                  <li>
+                    <a href="package.html" class="navbar-link" data-nav-link style="color: black;">packages</a>
+                  </li>
+      
+                  <!-- <li>
+                    <a href="#gallery" class="navbar-link" data-nav-link style="color: black;">gallery</a>
+                  </li> -->
+      
+                  <li>
+                    <a href="contact.html" class="navbar-link" data-nav-link style="color: black;">contact us</a>
+                  </li>
+      
+                </ul>
+      
+              </nav>
+      
+      
+      
+      
+          <!-- Profile -->
+      
+          <div class="profile">
+            <a class="popup-profile" style="text-decoration: none; color:black">
+               <div class="profile-display" style="display: flex; justify-content: center; text-align: center; align-items: center;">
+                <img src="assets/images/images.png" alt="" class="">
+                <i class='bx bx-caret-down'></i>
+               </div>
+            </a>
+            <div id="subMenu" class="sub-menu-wrap">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="assets/images/images.png" alt="" class="">
+                        <div class="details" style="padding: 10px;">
+                            <h4 id="name"></h4>
+                            <h6>Profile</h6>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <i id="bx" class='bx' style="padding-right: 1rem ;"></i>
+                        <button id="working" onclick="handleButtonClick()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <script>
+        function LoadUserData() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (!userData) {
+                document.getElementById('bx').classList.add('bx-log-in');
+                document.getElementById('name').textContent = "Guest";
+                document.getElementById('working').textContent = "Sign In";
+                return;
+            }
+    
+            console.log(userData);
+            document.getElementById('name').innerHTML = userData.username;
+            document.getElementById('bx').classList.add('bx-log-out');
+            document.getElementById('working').innerHTML = "Sign Out";
+        }
+  
+        function handleButtonClick() {
+             const userData = JSON.parse(localStorage.getItem('userData'));
+            if (!userData) {
+                window.location.href = 'signin.html'; 
+            } else {
+                alert('User Logout Completed')
+                localStorage.removeItem('userData');
+                window.location.href = 'index.html';
+            }
+        }
+    
+        // Call the function to load user data
+        LoadUserData();
+    </script>
+
+</header>
+
+<section class="gallery hero" id="gallery">
+    <div class="container">
+
+      <p class="section-subtitle hero-text">Photo Gallery</p>
+
+      <h2 class="h1 hero-title">Photo's From Travellers</h2>
+
+      <p class="hero-text">
+        Explore a collection of stunning photos shared by our travelers. Each image captures the essence of their unforgettable journeys and the beauty of the destinations we offer. Dive in and be inspired for your next adventure!
+      </p>
+
+      <ul class="gallery-list">
+
+        <li class="gallery-item" style="width: 400px;">
+          <figure class="gallery-image">
+            <img src="./assets/images/gallery-1.jpg" alt="Gallery image">
+          </figure>
+        </li>
+
+        <li class="gallery-item" style="width: 400px;">
+          <figure class="gallery-image">
+            <img src="./assets/images/gallery-2.jpg" alt="Gallery image">
+          </figure>
+        </li>
+
+        <li class="gallery-item" style="width: 400px;">
+          <figure class="gallery-image">
+            <img src="./assets/images/gallery-3.jpg" alt="Gallery image">
+          </figure>
+        </li>
+
+        <li class="gallery-item" style="width: 400px;">
+          <figure class="gallery-image">
+            <img src="./assets/images/gallery-4.jpg" alt="Gallery image">
+          </figure>
+        </li>
+
+        <li class="gallery-item" style="width: 400px;">
+          <figure class="gallery-image">
+            <img src="./assets/images/gallery-5.jpg" alt="Gallery image">
+          </figure>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">Before this, they provide a reason, by bringing forth the elements of their lifestyle, with the intention to avoid conflicts, to ensure the quality of their approach, and to adapt as needed.
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+01123456790" class="contact-link">+918604876354</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>PESCE College Mandya</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 <a href="">PESCE-Intenship-Project</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    </body>
+</html>
